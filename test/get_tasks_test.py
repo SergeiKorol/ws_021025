@@ -5,7 +5,9 @@ def get_tasks_test():
     assert response.status_code == 200
     assert type(response.json()) is list
 
+
 def test_new():
+    """Создать задачу, Проставить отметку о выполнении и проверить что completed ==True"""
     body = {"title": "Полить цветы", "completed": False}
     response = requests.post("https://todo-app-sky.herokuapp.com/", json=body)
     respons_body = response.json()
